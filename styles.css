@@ -1,0 +1,481 @@
+/* ============================================
+   ACTIVITAT 2: ESTILITZACIÓ AMB CSS
+   Nom: Ramen Ramon
+   Restaurant: Ramen
+   ============================================ */
+
+/* ============================================
+   VARIABLES CSS
+   Defineix aquí totes les teves variables
+   ============================================ */
+
+:root {
+  /*S'utilitza per definir variables */
+
+  /* Variables que s'utilitzaran en tota la pàgina*/
+
+  --primary-color: #8f1d1d;
+  --secondary-color: #fcf2d7;
+  --accent-color: #c49a00;
+  --background-color: #f7e9c5;
+  --surface-color: #fff8e8;
+  --text-color: #1d1d1d;
+  --dark-color: #611010;
+  --white: #ffffff;
+}
+
+/* ============================================
+   RESET I ESTILS GENERALS
+   ============================================ */
+
+* {
+  /* S'aplica aquesta configuració a tots els elements*/
+  box-sizing: border-box;
+}
+
+html {
+  /* El scroll es més suau*/
+  scroll-behavior: smooth;
+}
+
+body {
+  /*Configuració general de la pagina*/
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "Nunito Sans", sans-serif;
+  line-height: 1.6;
+}
+
+/* ============================================
+   TIPOGRAFIA
+   ============================================ */
+
+/*En aquest apartat, es declara els estils dels tipus de text que forma la pagina*/
+h1 {
+  color: var(--primary-color);
+}
+h1,
+h2,
+h3 {
+  /* Estils per als diferents titols*/
+  margin-top: 0;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 1px;
+}
+
+h1 {
+  /*Titol principal de la pagina(estil) */
+  font-size: 5.5rem;
+  line-height: 0.95;
+}
+
+h2 {
+  /*Titol principal de les seccions*/
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+h3 {
+  /* Totls dels plats del menu*/
+  font-size: 2rem;
+}
+
+p {
+  /* Treu el marge dels paràgrafs*/
+  margin-top: 0;
+}
+
+/* ============================================
+   NAVEGACIÓ
+   ============================================ */
+
+header {
+  /*Estilitza la capçalera de la pagina, la fixa a la part superior quan fem scroll*/
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 12px 40px;
+  background-color: var(--secondary-color);
+  border-bottom: 3px solid var(--primary-color);
+}
+
+nav {
+  /*Organitza el logo i el menú horitzontalment */
+  max-width: 1250px;
+  min-height: 80px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  /*Dona forma circilar i una mida fixa al logo*/
+  width: 82px;
+  height: 82px;
+  display: block;
+  object-fit: cover;
+  border: 3px solid var(--primary-color);
+  border-radius: 50%;
+}
+
+.nav-menu {
+  /*Organitza els elements del menú en una fila */
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu a {
+  /*Estils dels enllaços del menú */
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.nav-menu a:hover {
+  /*Canvia el color de l'enllaç quan passem el ratoli per sobre*/
+  color: var(--primary-color);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+  /* Crea una secció principal gran i centra el seu contingut*/
+  min-height: 720px;
+  padding: 100px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--primary-color);
+  border-bottom: 12px solid var(--accent-color);
+}
+
+.hero h1 {
+  /* Fa destacar el titol principal del Hero*/
+  max-width: 1100px;
+  margin: 0 auto 30px;
+  color: var(--primary-color);
+  font-size: 5.5rem;
+  line-height: 0.9;
+  letter-spacing: 2px;
+  -webkit-text-stroke: 2px var(--white);
+}
+
+.hero p {
+  /*Dona format al text descriptiu del Hero */
+  max-width: 650px;
+  margin: 0 auto 35px;
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.hero .btn-primary {
+  /*Adapta el botó principal al fons vermell del Hero*/
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-color: var(--secondary-color);
+}
+
+.hero .btn-primary:hover {
+  /*Canvia l'aspecte del boto del Hero en passar-hi per damunt */
+  background-color: var(--accent-color);
+  color: var(--white);
+  border-color: var(--accent-color);
+}
+
+/* ============================================
+   BOTONS
+   ============================================ */
+
+.btn-primary {
+  /* Estil general dels botons principal*/
+  display: inline-block;
+  padding: 15px 35px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: 2px solid var(--secondary-color);
+  border-radius: 6px;
+  text-decoration: none;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  /* Canvia el boto quan hi passa el ratolí*/
+  background-color: var(--accent-color);
+  color: var(--white);
+  border-color: var(--accent-color);
+}
+
+/* ============================================
+   SECCIÓ SOBRE NOSALTRES
+   ============================================ */
+
+.about {
+  /*Dona espai i separa visualment la secció */
+  padding: 120px 25px;
+  background-color: var(--secondary-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.about h2 {
+  /* Estilitza el titol de la secció about*/
+  max-width: 1050px;
+  margin: 0 auto 35px;
+  color: var(--primary-color);
+  font-size: 4rem;
+}
+
+.about p {
+  /*Crea una targeta per contenir la informació del restuarant */
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 45px;
+  background-color: var(--surface-color);
+  border-top: 6px solid var(--primary-color);
+  border-radius: 0 0 18px 18px;
+  text-align: left;
+  line-height: 1.9;
+  box-shadow: 0 12px 30px rgba(97, 16, 16, 0.12);
+}
+
+.about strong {
+  /*Destaca el nom del restaurant dins del text */
+  color: var(--primary-color);
+}
+
+/* ============================================
+   DESTACATS DEL MENÚ
+   ============================================ */
+
+.menu-highlight {
+  /*Dona estil general a la secció del menú */
+  padding: 120px 25px;
+  background-color: var(--background-color);
+  text-align: center;
+}
+
+.menu-highlight h2 {
+  /*Estilitza el títol de la secció del menú */
+  color: var(--dark-color);
+  font-size: 4rem;
+}
+
+.dishes {
+  /*Organitza les targetes dels plats en columnes */
+  max-width: 1200px;
+  margin: 60px auto 0;
+  display: flex;
+  gap: 28px;
+}
+
+.dish-card {
+  /*Dona format a cada targeta individual del menú */
+  flex: 1;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface-color);
+  border: 3px solid var(--primary-color);
+  border-radius: 6px;
+  box-shadow: 8px 8px 0 var(--accent-color);
+}
+
+.dish-card h3 {
+  /*Estilitza el nom de cada plat */
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.dish-card img {
+  /*Ajusta les imatges perque tinguin la mateixa mida */
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 4px;
+  background-color: var(--background-color);
+}
+
+.dish-card p {
+  /*Dona espai i mida adequada a la descripció del plat */
+  margin: 20px 5px;
+  font-size: 1rem;
+}
+
+.dish-card:hover {
+  /*Mou la targeta i canvia la seva ombra al passar el ratoli */
+  border-color: var(--dark-color);
+  box-shadow: 11px 11px 0 var(--primary-color);
+  transform: translate(-3px, -3px);
+}
+
+.price {
+  /* Destaca el preu del plat*/
+  display: block;
+  margin-top: auto;
+  padding-top: 15px;
+  color: var(--primary-color);
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+
+/* ============================================
+   FORMULARI DE RESERVA
+   ============================================ */
+
+.reservation {
+  /* Dona estil general a la secció de reserva */
+  padding: 120px 25px;
+  background-color: var(--dark-color);
+  text-align: center;
+  border-top: 10px solid var(--accent-color);
+}
+
+.reservation h2 {
+  /* Estilitza el títol de la secció de reserva */
+  color: var(--secondary-color);
+  font-size: 4rem;
+}
+
+.reservation form {
+  /* Crea una targeta per contenir el formulari */
+  max-width: 580px;
+  margin: 45px auto 0;
+  padding: 45px;
+  background-color: var(--secondary-color);
+  border-radius: 18px;
+  text-align: left;
+  box-shadow: 12px 12px 0 var(--accent-color);
+}
+
+.reservation label {
+  /*Fa visibles i clares les etqiuetes dels camps*/
+  display: block;
+  margin-bottom: 7px;
+  color: var(--dark-color);
+  font-weight: 800;
+}
+
+.reservation input,
+.reservation select {
+  /*Dona estil als camps del formulari*/
+  width: 100%;
+  padding: 14px 15px;
+  margin-bottom: 22px;
+  background-color: var(--white);
+  border: 2px solid var(--dark-color);
+  border-radius: 6px;
+  color: var(--text-color);
+  font: inherit;
+}
+
+.reservation input:focus,
+.reservation select:focus {
+  /*Destaca el camp seleccionat*/
+  outline: none;
+  border-color: var(--accent-color);
+  background-color: var(--surface-color);
+}
+
+.reservation .btn-primary {
+  /* Adapta el botó de reserva al disseny del formulari */
+  width: 100%;
+  margin-top: 10px;
+  background-color: var(--accent-color);
+  color: var(--white);
+  border-color: var(--accent-color);
+}
+.reservation .btn-primary:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-color: var(--primary-color);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+  /* Dona estil a la part inferior de la pàgina */
+  padding: 45px 20px;
+  background-color: var(--text-color);
+  color: var(--secondary-color);
+  text-align: center;
+  border-top: 5px solid var(--accent-color);
+}
+
+footer p {
+  /* Separa els diferents textos del peu de pàgina */
+  margin: 7px 0;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  /*Adapta el disseny per a pantalles petites*/
+  header {
+    padding: 12px 20px;
+  }
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .logo img {
+    width: 70px;
+    height: 70px;
+  }
+  .nav-menu {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero {
+    min-height: 600px;
+    padding: 80px 20px;
+  }
+  .hero h1 {
+    font-size: 3.5rem;
+    -webkit-text-stroke: 1px var(--white);
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .about,
+  .menu-highlight,
+  .reservation {
+    padding: 80px 20px;
+  }
+  .about h2,
+  .menu-highlight h2,
+  .reservation h2 {
+    font-size: 3rem;
+  }
+  .about p {
+    padding: 25px;
+  }
+  .dishes {
+    flex-direction: column;
+    max-width: 500px;
+  }
+  .dish-card img {
+    height: 240px;
+  }
+  .reservation form {
+    padding: 25px;
+    box-shadow: 7px 7px 0 var(--accent-color);
+  }
+}

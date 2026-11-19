@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramen Ramón - Menú Digital</title>
+
+    <!-- Google Fonts (mateix de l'Act 2) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER AMB NAVEGACIÓ -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/ramen.jpeg" alt="Ramen Ramón">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inici">Inici</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#begudes">Begudes</a></li>
+                <li><a href="#contacte">Contacte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inici" class="hero">
+        <h1>La nostra carta</h1>
+        <p>Bon ramen, bons ingredients i zero xorrades. Mira la carta, demana i fot-li canya al bol.</p>
+    </section>
+
+    <!-- FILTRES DE CATEGORIA -->
+    <section class="category-filters">
+        <div class="filters">
+            <button class="filter-btn active" data-category="tots">Tots</button>
+            <button class="filter-btn" data-category="entrants">Entrants</button>
+            <button class="filter-btn" data-category="principals">Principals</button>
+            <button class="filter-btn" data-category="postres">Postres</button>
+        </div>
+    </section>
+
+    <!-- SECCIÓ D'ENTRANTS -->
+    <section id="menu" class="menu-section">
+        <h2>Entrants</h2>
+        <div class="dishes-grid">
+            <!-- Card 1 -->
+            <div class="dish-card" data-category="entrants">
+                <div class="dish-image"></div>
+                <div class="dish-info">
+                    <div class="dish-header">
+                        <h3 class="dish-name">Gyozes de Miravet</h3>
+                        <span class="dish-price">5,50€</span>
+                    </div>
+                    <p class="dish-description">
+                        Cinc gyozes arrebossades a la planxa, farcides de porc i col, amb salsa de soja.
+                    </p>
+                    <div class="dish-allergens">
+                        <span class="allergen-badge">Gluten</span>
+                        <span class="allergen-badge">Soja</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="dish-card" data-category="entrants">
+                <div class="dish-image"></div>
+                <div class="dish-info">
+                    <div class="dish-header">
+                        <h3 class="dish-name">Edamame</h3>
+                        <span class="dish-price">4,00€</span>
+                    </div>
+                    <p class="dish-description">
+                        Faves de soja tendres al vapor amb una mica de sal en escates.
+                    </p>
+                    <div class="dish-allergens">
+                        <span class="allergen-badge">Soja</span>
+                        <span class="allergen-badge">Vegà</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="dish-card" data-category="entrants">
+                <div class="dish-image"></div>
+                <div class="dish-info">
+                    <div class="dish-header">
+                        <h3 class="dish-name">Croquetes d'en Ramón</h3>
+                        <span class="dish-price">6,00€</span>
+                    </div>
+                    <p class="dish-description">
+                        Croquetes cremoses de brou de ramen i porc, cruixents per fora.
+                    </p>
+                    <div class="dish-allergens">
+                        <span class="allergen-badge">Gluten</span>
+                        <span class="allergen-badge">Lactosa</span>
+                        <span class="allergen-badge">Ou</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓ DE PLATS PRINCIPALS -->
+    <section class="menu-section">
+        <h2>Plats Principals</h2>
+        <div class="dishes-grid">
+            <!-- Card 1 -->
+            <div class="dish-card" data-category="principals">
+                <div class="dish-image">
+                    <img src="images/ramon-takeshi.jpg" alt="Ramen Takeshi">
+                </div>
+                <div class="dish-info">
+                    <div class="dish-header">
+                        <h3 class="dish-name">Ramen Takeshi</h3>
+                        <span class="dish-price">12,00€</span>
+                    </div>
+                    <p class="dish-description">
+                        La recepta del mestre japonès que va ensenyar tot a en Ramón.
+                    </p>
+                    <div class="dish-allergens">
+                        <span class="allergen-badge">Gluten</span>
+                        <span class="allergen-badge">Ou</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="dish-card" data-category="principals">
+                <div class="dish-image">
+                    <img src="images/ramen-miravet.jpg" alt="Ramen Miravet">
+                </div>
+                <div class="dish-info">
+                    <div class="dish-header">
+                        <h3 class="dish-name">Ramen Miravet</h3>
+                        <span class="dish-price">12,99€</span>
+                    </div>
+                    <p class="dish-description">
+                        Un ramen amb caràcter català.
+                    </p>
+                    <div class="dish-allergens">
+                        <span class="allergen-badge">Gluten</span>
+                        <span class="allergen-badge">Carn</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="dish-card" data-category="principals">
+                <div class="dish-image">
+                    <img src="images/ramon-mamon.jpg" alt="Ramen Mamon">
+                </div>
+                <div class="dish-info">
+                    <div class="dish-header">
+                        <h3 class="dish-name">Ramen Mamon</h3>
+                        <span class="dish-price">15,00€</span>
+                    </div>
+                    <p class="dish-description">
+                        Un ramen picant i potent, per als més atrevits.
+                    </p>
+                    <div class="dish-allergens">
+                        <span class="allergen-badge">Gluten</span>
+                        <span class="allergen-badge">Picant</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓ DE POSTRES -->
+    <section class="menu-section">
+        <h2>Postres</h2>
+        <div class="dishes-grid">
+            <!-- Card 1 -->
+            <div class="dish-card" data-category="postres">
+                <div class="dish-image"></div>
+                <div class="dish-info">
+                    <div class="dish-header">
+                        <h3 class="dish-name">Mochi de te verd</h3>
+                        <span class="dish-price">4,50€</span>
+                    </div>
+                    <p class="dish-description">
+                        Tres boletes de pasta d'arròs farcides de crema de te matcha.
+                    </p>
+                    <div class="dish-allergens">
+                        <span class="allergen-badge">Sense gluten</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="dish-card" data-category="postres">
+                <div class="dish-image"></div>
+                <div class="dish-info">
+                    <div class="dish-header">
+                        <h3 class="dish-name">Dorayaki</h3>
+                        <span class="dish-price">4,00€</span>
+                    </div>
+                    <p class="dish-description">
+                        Dues truites petites de pa dolç farcides de mongeta vermella.
+                    </p>
+                    <div class="dish-allergens">
+                        <span class="allergen-badge">Gluten</span>
+                        <span class="allergen-badge">Ou</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="dish-card" data-category="postres">
+                <div class="dish-image"></div>
+                <div class="dish-info">
+                    <div class="dish-header">
+                        <h3 class="dish-name">Gelat de sèsam negre</h3>
+                        <span class="dish-price">3,80€</span>
+                    </div>
+                    <p class="dish-description">
+                        Gelat cremós de sèsam negre torrat, amb un toc de mel.
+                    </p>
+                    <div class="dish-allergens">
+                        <span class="allergen-badge">Lactosa</span>
+                        <span class="allergen-badge">Sèsam</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓ DE BEGUDES -->
+    <section id="begudes" class="drinks-section">
+        <h2>Begudes</h2>
+        <div class="drinks-list">
+            <!-- Beguda 1 -->
+            <div class="drink-card">
+                <div class="drink-icon">🍵</div>
+                <div class="drink-info">
+                    <h3 class="drink-name">Te verd</h3>
+                    <p class="drink-description">Te sencha calent</p>
+                    <span class="drink-price">2,50€</span>
+                </div>
+            </div>
+
+            <!-- Beguda 2 -->
+            <div class="drink-card">
+                <div class="drink-icon">🍺</div>
+                <div class="drink-info">
+                    <h3 class="drink-name">Cervesa japonesa</h3>
+                    <p class="drink-description">Rossa, ampolla de 33 cl</p>
+                    <span class="drink-price">3,50€</span>
+                </div>
+            </div>
+
+            <!-- Beguda 3 -->
+            <div class="drink-card">
+                <div class="drink-icon">🥤</div>
+                <div class="drink-info">
+                    <h3 class="drink-name">Ramune</h3>
+                    <p class="drink-description">Refresc japonès de llimona</p>
+                    <span class="drink-price">3,00€</span>
+                </div>
+            </div>
+
+            <!-- Beguda 4 -->
+            <div class="drink-card">
+                <div class="drink-icon">☕</div>
+                <div class="drink-info">
+                    <h3 class="drink-name">Cafè</h3>
+                    <p class="drink-description">Cafè sol o amb llet</p>
+                    <span class="drink-price">1,80€</span>
+                </div>
+            </div>
+
+            <!-- Beguda 5 -->
+            <div class="drink-card">
+                <div class="drink-icon">💧</div>
+                <div class="drink-info">
+                    <h3 class="drink-name">Aigua</h3>
+                    <p class="drink-description">Ampolla de 50 cl</p>
+                    <span class="drink-price">1,80€</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contacte">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; 2024 Ramen Ramón. Tots els drets reservats.</p>
+                <p>Adreça: Plaça Major, 2, 43747 Miravet, Tarragona</p>
+                <p>Tel: 665 856 664 | Email: info@ramenramon.cat</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                <a href="#" class="social-link" aria-label="Facebook">👍</a>
+                <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
