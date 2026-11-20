@@ -1,19 +1,13 @@
 /* ============================================
-   ACTIVITAT 2: ESTILITZACIÓ AMB CSS
-   Nom: Ramen Ramon
-   Restaurant: Ramen
+   ACTIVITAT 3: CARTA DIGITAL AMB FLEXBOX
    ============================================ */
 
 /* ============================================
    VARIABLES CSS
-   Defineix aquí totes les teves variables
+   Copia aquí les variables de l'Activitat 2
    ============================================ */
 
 :root {
-  /*S'utilitza per definir variables */
-
-  /* Variables que s'utilitzaran en tota la pàgina*/
-
   --primary-color: #8f1d1d;
   --secondary-color: #fcf2d7;
   --accent-color: #c49a00;
@@ -29,7 +23,8 @@
    ============================================ */
 
 * {
-  /* S'aplica aquesta configuració a tots els elements*/
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -40,44 +35,48 @@ html {
 
 body {
   /*Configuració general de la pagina*/
-  margin: 0;
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: "Nunito Sans", sans-serif;
   line-height: 1.6;
 }
 
+/* Elimina l'estil de les llistes */
+ul {
+  list-style: none;
+}
+
+/* Estil dels links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* ============================================
    TIPOGRAFIA
    ============================================ */
 
-/*En aquest apartat, es declara els estils dels tipus de text que forma la pagina*/
-h1 {
-  color: var(--primary-color);
-}
-h1,
-h2,
-h3 {
-  /* Estils per als diferents titols*/
-  margin-top: 0;
-  font-family: "Bebas Neue", sans-serif;
-  letter-spacing: 1px;
-}
-
 h1 {
   /*Titol principal de la pagina(estil) */
+  color: var(--primary-color);
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 1px;
   font-size: 5.5rem;
   line-height: 0.95;
 }
 
 h2 {
   /*Titol principal de les seccions*/
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 1px;
   font-size: 3.5rem;
   line-height: 1;
 }
 
 h3 {
   /* Totls dels plats del menu*/
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 1px;
   font-size: 2rem;
 }
 
@@ -87,7 +86,8 @@ p {
 }
 
 /* ============================================
-   NAVEGACIÓ
+   NAVEGACIÓ AMB FLEXBOX
+   Aplica Flexbox per organitzar logo i menu
    ============================================ */
 
 header {
@@ -125,15 +125,11 @@ nav {
   display: flex;
   align-items: center;
   gap: 35px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 .nav-menu a {
   /*Estils dels enllaços del menú */
   color: var(--text-color);
-  text-decoration: none;
   font-size: 1rem;
   font-weight: 800;
 }
@@ -144,7 +140,8 @@ nav {
 }
 
 /* ============================================
-   HERO SECTION
+   HERO SECTION AMB FLEXBOX
+   Usa Flexbox per centrar el contingut
    ============================================ */
 
 .hero {
@@ -180,110 +177,82 @@ nav {
   font-weight: 600;
 }
 
-.hero .btn-primary {
-  /*Adapta el botó principal al fons vermell del Hero*/
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  border-color: var(--secondary-color);
-}
-
-.hero .btn-primary:hover {
-  /*Canvia l'aspecte del boto del Hero en passar-hi per damunt */
-  background-color: var(--accent-color);
-  color: var(--white);
-  border-color: var(--accent-color);
-}
-
 /* ============================================
-   BOTONS
+   FILTRES DE CATEGORIA AMB FLEXBOX
+   Botons en fila que es poden embolcar
    ============================================ */
 
-.btn-primary {
-  /* Estil general dels botons principal*/
-  display: inline-block;
-  padding: 15px 35px;
-  background-color: var(--secondary-color);
+.category-filters {
+  /* Contenidor dels filtres */
+}
+
+.filters {
+  /* Usa display: flex, gap i flex-wrap */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 30px 25px;
+}
+
+.filter-btn {
+  /* Estils dels botons de filtre */
+  padding: 10px 22px;
+  background-color: var(--surface-color);
   color: var(--primary-color);
-  border: 2px solid var(--secondary-color);
+  border: 3px solid var(--primary-color);
   border-radius: 6px;
-  text-decoration: none;
-  font: inherit;
-  font-weight: 800;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
   cursor: pointer;
 }
 
-.btn-primary:hover {
-  /* Canvia el boto quan hi passa el ratolí*/
-  background-color: var(--accent-color);
-  color: var(--white);
-  border-color: var(--accent-color);
+.filter-btn:hover,
+.filter-btn.active {
+  /* Efecte hover i estat actiu */
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 /* ============================================
-   SECCIÓ SOBRE NOSALTRES
+   GRID DE PLATS AMB FLEXBOX
+   Cards organitzades amb flex-wrap
    ============================================ */
 
-.about {
-  /*Dona espai i separa visualment la secció */
-  padding: 120px 25px;
-  background-color: var(--secondary-color);
-  border-bottom: 2px solid var(--accent-color);
-}
-
-.about h2 {
-  /* Estilitza el titol de la secció about*/
-  max-width: 1050px;
-  margin: 0 auto 35px;
-  color: var(--primary-color);
-  font-size: 4rem;
-}
-
-.about p {
-  /*Crea una targeta per contenir la informació del restuarant */
-  max-width: 1050px;
-  margin: 0 auto;
-  padding: 45px;
-  background-color: var(--surface-color);
-  border-top: 6px solid var(--primary-color);
-  border-radius: 0 0 18px 18px;
-  text-align: left;
-  line-height: 1.9;
-  box-shadow: 0 12px 30px rgba(97, 16, 16, 0.12);
-}
-
-.about strong {
-  /*Destaca el nom del restaurant dins del text */
-  color: var(--primary-color);
-}
-
-/* ============================================
-   DESTACATS DEL MENÚ
-   ============================================ */
-
-.menu-highlight {
+.menu-section {
   /*Dona estil general a la secció del menú */
-  padding: 120px 25px;
+  padding: 80px 25px;
   background-color: var(--background-color);
   text-align: center;
+  border-bottom: 6px solid var(--primary-color);
 }
 
-.menu-highlight h2 {
+.menu-section:nth-of-type(even) {
+  /* Alterna el fons perquè es noti on acaba un apartat i comença l'altre */
+  background-color: var(--surface-color);
+}
+
+.menu-section h2 {
   /*Estilitza el títol de la secció del menú */
   color: var(--dark-color);
   font-size: 4rem;
 }
 
-.dishes {
-  /*Organitza les targetes dels plats en columnes */
-  max-width: 1200px;
-  margin: 60px auto 0;
+.dishes-grid {
+  /* Usa display: flex, flex-wrap i gap */
+  /* Les cards s'han d'organitzar en múltiples files */
+  max-width: 1400px;
+  margin: 50px auto 0;
   display: flex;
   gap: 28px;
+  flex-wrap: wrap;
 }
 
 .dish-card {
-  /*Dona format a cada targeta individual del menú */
-  flex: 1;
+  /* Usa flex: 1 1 300px per responsive automàtic */
+  /* Cada card ha de tenir display: flex i flex-direction: column */
+  flex: 1 1 300px;
   padding: 18px;
   display: flex;
   flex-direction: column;
@@ -293,13 +262,19 @@ nav {
   box-shadow: 8px 8px 0 var(--accent-color);
 }
 
-.dish-card h3 {
-  /*Estilitza el nom de cada plat */
-  margin-bottom: 15px;
-  color: var(--primary-color);
+.dish-card:hover {
+  /*Mou la targeta i canvia la seva ombra al passar el ratoli */
+  border-color: var(--dark-color);
+  box-shadow: 11px 11px 0 var(--primary-color);
+  transform: translate(-3px, -3px);
 }
 
-.dish-card img {
+/* ============================================
+   CONTINGUT INTERN DE LA CARD AMB FLEXBOX
+   Organitza la info dins de cada card
+   ============================================ */
+
+.dish-image img {
   /*Ajusta les imatges perque tinguin la mateixa mida */
   width: 100%;
   height: 270px;
@@ -308,103 +283,134 @@ nav {
   background-color: var(--background-color);
 }
 
-.dish-card p {
-  /*Dona espai i mida adequada a la descripció del plat */
-  margin: 20px 5px;
-  font-size: 1rem;
-}
-
-.dish-card:hover {
-  /*Mou la targeta i canvia la seva ombra al passar el ratoli */
-  border-color: var(--dark-color);
-  box-shadow: 11px 11px 0 var(--primary-color);
-  transform: translate(-3px, -3px);
-}
-
-.price {
-  /* Destaca el preu del plat*/
-  display: block;
-  margin-top: auto;
+.dish-info {
+  /* Usa display: flex i flex-direction: column */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   padding-top: 15px;
+}
+
+.dish-header {
+  /* Usa display: flex i justify-content: space-between */
+  /* Per posar nom i preu en la mateixa línia */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.dish-name {
+  /*Estilitza el nom de cada plat */
+  color: var(--primary-color);
+}
+
+.dish-price {
+  /* Destaca el preu del plat*/
   color: var(--primary-color);
   font-size: 1.7rem;
   font-weight: 900;
 }
 
-/* ============================================
-   FORMULARI DE RESERVA
-   ============================================ */
-
-.reservation {
-  /* Dona estil general a la secció de reserva */
-  padding: 120px 25px;
-  background-color: var(--dark-color);
-  text-align: center;
-  border-top: 10px solid var(--accent-color);
+.dish-description {
+  /* Estils de la descripció */
+  /* Usa flex-grow: 1 per ocupar espai disponible */
+  margin: 20px 5px;
+  font-size: 1rem;
+  flex-grow: 1;
 }
 
-.reservation h2 {
-  /* Estilitza el títol de la secció de reserva */
-  color: var(--secondary-color);
-  font-size: 4rem;
+.dish-allergens {
+  /* Usa display: flex, gap i flex-wrap */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.reservation form {
-  /* Crea una targeta per contenir el formulari */
-  max-width: 580px;
-  margin: 45px auto 0;
-  padding: 45px;
+.allergen-badge {
+  /* Estils dels badges d'al·lèrgens */
+  padding: 3px 10px;
   background-color: var(--secondary-color);
-  border-radius: 18px;
-  text-align: left;
-  box-shadow: 12px 12px 0 var(--accent-color);
-}
-
-.reservation label {
-  /*Fa visibles i clares les etqiuetes dels camps*/
-  display: block;
-  margin-bottom: 7px;
   color: var(--dark-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 20px;
+  font-size: 0.8rem;
   font-weight: 800;
 }
 
-.reservation input,
-.reservation select {
-  /*Dona estil als camps del formulari*/
-  width: 100%;
-  padding: 14px 15px;
-  margin-bottom: 22px;
-  background-color: var(--white);
-  border: 2px solid var(--dark-color);
-  border-radius: 6px;
-  color: var(--text-color);
-  font: inherit;
+/* ============================================
+   SECCIÓ DE BEGUDES AMB FLEXBOX
+   Layout horitzontal diferent
+   ============================================ */
+
+.drinks-section {
+  /* Contenidor de begudes */
+  padding: 80px 25px;
+  background-color: var(--dark-color);
+  border-top: 10px solid var(--accent-color);
+  text-align: center;
+}
+.drinks-section h2 {
+  color: var(--secondary-color);
 }
 
-.reservation input:focus,
-.reservation select:focus {
-  /*Destaca el camp seleccionat*/
-  outline: none;
-  border-color: var(--accent-color);
+.drinks-list {
+  /* Usa display: flex i overflow-x: auto per scroll horitzontal */
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding-bottom: 15px;
+}
+
+.drink-card {
+  /* Usa flex: 0 0 250px per mida fixa */
+  /* Usa display: flex i flex-direction: row per layout horitzontal */
+  flex: 0 0 250px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
   background-color: var(--surface-color);
+  border: 3px solid var(--accent-color);
+  border-radius: 6px;
 }
 
-.reservation .btn-primary {
-  /* Adapta el botó de reserva al disseny del formulari */
-  width: 100%;
-  margin-top: 10px;
-  background-color: var(--accent-color);
-  color: var(--white);
-  border-color: var(--accent-color);
+.drink-icon {
+  /* Estils de l'icona */
+  flex-shrink: 0;
 }
-.reservation .btn-primary:hover {
-  background-color: var(--primary-color);
-  color: var(--white);
-  border-color: var(--primary-color);
+
+.drink-icon img {
+  /* Mida de la icona de la beguda */
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+.drink-info {
+  /* Info de la beguda */
+  display: flex;
+  flex-direction: column;
+}
+
+.drink-name {
+  /* Estils del nom */
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.drink-price {
+  /* Estils del preu */
+  color: var(--primary-color);
+  font-weight: 900;
 }
 
 /* ============================================
-   FOOTER
+   FOOTER AMB FLEXBOX
+   Distribució d'elements
    ============================================ */
 
 footer {
@@ -412,70 +418,154 @@ footer {
   padding: 45px 20px;
   background-color: var(--text-color);
   color: var(--secondary-color);
-  text-align: center;
   border-top: 5px solid var(--accent-color);
 }
 
-footer p {
+.footer-content {
+  /* Usa display: flex i justify-content: space-between */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-info {
+  /* Info del footer */
+}
+
+.footer-info p {
   /* Separa els diferents textos del peu de pàgina */
   margin: 7px 0;
 }
 
+.footer-social {
+  /* Xarxes socials amb Flexbox */
+  display: flex;
+  gap: 15px;
+}
+
+.social-link {
+  /* Estils dels links socials */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  font-size: 1.4rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+}
+
+.social-link img {
+  /* Mida de la icona dins del cercle */
+  width: 22px;
+  height: 22px;
+}
+
+.social-link:hover {
+  /* Efecte hover */
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE AMB FLEXBOX
+   Media queries per tablets i mòbils
    ============================================ */
 
+/* Tablets i pantalles mitjanes */
 @media (max-width: 768px) {
-  /*Adapta el disseny per a pantalles petites*/
+  /* Adapta la navegació */
   header {
     padding: 12px 20px;
   }
+
   nav {
+    /* Canvia a flex-direction: column si cal */
     flex-direction: column;
     gap: 15px;
   }
+
   .logo img {
     width: 70px;
     height: 70px;
   }
+
   .nav-menu {
+    /* Adapta el menu */
     gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
   }
+
   .hero {
     min-height: 600px;
     padding: 80px 20px;
   }
+
+  /* Adapta el hero */
   .hero h1 {
+    /* Redueix la mida de la font */
     font-size: 3.5rem;
     -webkit-text-stroke: 1px var(--white);
   }
+
   .hero p {
     font-size: 1rem;
   }
-  .about,
-  .menu-highlight,
-  .reservation {
+
+  .menu-section {
     padding: 80px 20px;
   }
-  .about h2,
-  .menu-highlight h2,
-  .reservation h2 {
+
+  .menu-section h2 {
     font-size: 3rem;
   }
-  .about p {
-    padding: 25px;
+
+  /* Adapta les cards */
+  .dish-card {
+    /* Assegura't que ocupen més amplada */
+    flex: 1 1 100%;
   }
-  .dishes {
-    flex-direction: column;
-    max-width: 500px;
-  }
-  .dish-card img {
+
+  .dish-image img {
     height: 240px;
   }
-  .reservation form {
-    padding: 25px;
-    box-shadow: 7px 7px 0 var(--accent-color);
+
+  /* Adapta el footer */
+  .footer-content {
+    /* Canvia a columna si cal */
+    flex-direction: column;
+    text-align: center;
   }
 }
+
+/* Mòbils petits */
+@media (max-width: 480px) {
+  /* Ajustos finals per mòbils petits */
+
+  .filter-btn {
+    /* Redueix mida */
+    padding: 8px 14px;
+    font-size: 1.1rem;
+  }
+
+  .dish-header {
+    /* Apila nom i preu si cal */
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+/* ============================================
+   NOTES FINALS
+   He fet servir Flexbox al menú de dalt, al hero, als filtres,
+   a les targetes dels plats, a les begudes i al footer.
+   He reutilitzat les variables de l'Act 2 (colors i fonts)
+   perquè la carta s'assembli a la meva landing.
+   Per al responsive he fet servir flex-wrap i dues media queries,
+   una per a 768px i una altra per a 480px.
+   ============================================ */
