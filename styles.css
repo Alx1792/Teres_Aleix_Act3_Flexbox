@@ -559,7 +559,7 @@ footer {
   }
 }
 
-/* ============================================
+/* 
    NOTES FINALS
    He fet servir Flexbox al menú de dalt, al hero, als filtres,
    a les targetes dels plats, a les begudes i al footer.
@@ -567,4 +567,4 @@ footer {
    perquè la carta s'assembli a la meva landing.
    Per al responsive he fet servir flex-wrap i dues media queries,
    una per a 768px i una altra per a 480px.
-   ============================================ */
+    */
